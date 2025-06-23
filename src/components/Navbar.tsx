@@ -25,20 +25,26 @@ export default function Navbar() {
             <Link href="/profile" className="hover:underline">Profile</Link>
             <Link href="/search" className="hover:underline">Search Profiles</Link>
             <Link href="/story" className="hover:underline">Add Story</Link>
-
-
           </>
         )}
       </div>
-      <div>
+      <div className="space-x-3">
         {user ? (
-          <button onClick={handleLogout} className="bg-red-500 hover:bg-red-600 px-3 py-1 rounded">
+          <button
+            onClick={handleLogout}
+            className="bg-red-500 hover:bg-red-600 px-3 py-1 rounded"
+          >
             Logout
           </button>
         ) : (
-          <Link href="/login" className="bg-blue-500 px-3 py-1 rounded hover:bg-blue-600">
-            Login
-          </Link>
+          <>
+            <Link href="/login" className="bg-blue-500 px-3 py-1 rounded hover:bg-blue-600">
+              Login
+            </Link>
+            <Link href="/signup" className="bg-green-500 px-3 py-1 rounded hover:bg-green-600">
+              Signup
+            </Link>
+          </>
         )}
       </div>
     </nav>
